@@ -58,6 +58,14 @@ app.get('/api/health', (req, res) => {
     status: 'ok',
     supabaseConfigured: Boolean(supabase),
     table: dbTable,
+    env: {
+      hasSupabaseUrl: Boolean(SUPABASE_URL),
+      hasSupabaseAnonKey: Boolean(process.env.SUPABASE_ANON_KEY),
+      hasSupabasePublishableKey: Boolean(process.env.SUPABASE_PUBLISHABLE_KEY),
+      hasSupabaseKey: Boolean(process.env.SUPABASE_KEY),
+      vercel: Boolean(process.env.VERCEL),
+      nodeEnv: process.env.NODE_ENV || null,
+    },
   });
 });
 
