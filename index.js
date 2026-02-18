@@ -1,4 +1,5 @@
 // API Express para recibir mensajes del formulario de contacto y guardarlos en Supabase
+require('dotenv').config();
 const express = require('express');
 const { createClient } = require('@supabase/supabase-js');
 const cors = require('cors');
